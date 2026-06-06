@@ -27,6 +27,9 @@ def emotion_detector(text_to_analyze):
                 dom_emo = item[0]
         record['dominant_emotion'] = dom_emo
 
+    elif response.status_code == 400:
+        record = {'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
+        
     else:
         record = {'anger': '', 'disgust': '', 'fear': '', 'joy': '', 'sadness': '', 'dominant_emotion': ''}
 
